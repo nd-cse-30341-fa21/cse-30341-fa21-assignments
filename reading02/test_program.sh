@@ -198,5 +198,4 @@ SCORE=$(python3 <<EOF
 print("{:0.2f}".format(($TESTS - $FAILURES) * 3.0 / $TESTS))
 EOF
 )
-echo
 echo "   Score $SCORE"
