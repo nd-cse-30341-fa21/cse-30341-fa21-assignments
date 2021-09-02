@@ -6,7 +6,7 @@ output() {
 	tr 'A-Za-z' 'N-ZA-Mn-za-m'
 }
 
-echo "Checking reading01 program ... "
+echo "Checking reading04 program ... "
 
 DIFF=$(diff <(./program 2> /dev/null) <(output) | grep -E "^[><]" | wc -l)
 COUNT=$(output | wc -l)
