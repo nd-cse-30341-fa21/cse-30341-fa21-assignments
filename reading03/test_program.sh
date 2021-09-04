@@ -128,7 +128,7 @@ fi
 
 printf " %-60s ... " "program $ARGUMENTS (strace)"
 strace -e clone ./program $ARGUMENTS &> $WORKSPACE/test
-if [ $? -ne 0 ] || [ $(grep -c clone $WORKSPACE/test) -ne $(echo $ARGUMENTS | wc -w) ]; then
+if [ $? -ne 0 ] || [ $(grep -c clone $WORKSPACE/test) -lt $(echo $ARGUMENTS | wc -w) ]; then
     error "Failure"
 else
     echo "Success"
@@ -154,7 +154,7 @@ fi
 
 printf " %-60s ... " "program $ARGUMENTS (strace)"
 strace -e clone ./program $ARGUMENTS &> $WORKSPACE/test
-if [ $? -ne 0 ] || [ $(grep -c clone $WORKSPACE/test) -ne $(echo $ARGUMENTS | wc -w) ]; then
+if [ $? -ne 0 ] || [ $(grep -c clone $WORKSPACE/test) -lt $(echo $ARGUMENTS | wc -w) ]; then
     error "Failure"
 else
     echo "Success"
@@ -180,7 +180,7 @@ fi
 
 printf " %-60s ... " "program $ARGUMENTS (strace)"
 strace -e clone ./program $ARGUMENTS &> $WORKSPACE/test
-if [ $? -ne 0 ] || [ $(grep -c clone $WORKSPACE/test) -ne $(echo $ARGUMENTS | wc -w) ]; then
+if [ $? -ne 0 ] || [ $(grep -c clone $WORKSPACE/test) -lt $(echo $ARGUMENTS | wc -w) ]; then
     error "Failure"
 else
     echo "Success"
@@ -207,7 +207,7 @@ fi
 
 printf " %-60s ... " "program $ARGUMENTS (strace)"
 strace -e clone ./program $ARGUMENTS &> $WORKSPACE/test
-if [ $? -ne 1 ] || [ $(grep -c clone $WORKSPACE/test) -ne $(echo $ARGUMENTS | wc -w) ]; then
+if [ $? -ne 1 ] || [ $(grep -c clone $WORKSPACE/test) -lt $(echo $ARGUMENTS | wc -w) ]; then
     error "Failure"
 else
     echo "Success"
@@ -234,7 +234,7 @@ fi
 
 printf " %-60s ... " "program $ARGUMENTS (strace)"
 strace -e clone ./program $ARGUMENTS &> $WORKSPACE/test
-if [ $? -ne 0 ] || [ $(grep -c clone $WORKSPACE/test) -ne $(echo $ARGUMENTS | wc -w) ]; then
+if [ $? -ne 0 ] || [ $(grep -c clone $WORKSPACE/test) -lt $(echo $ARGUMENTS | wc -w) ]; then
     error "Failure"
 else
     echo "Success"
