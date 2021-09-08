@@ -21,6 +21,14 @@ error() {
 cleanup() {
     STATUS=${1:-$FAILURES}
     rm -fr $WORKSPACE
+
+    if [ "$STATUS" -eq 0 ]; then
+        echo "  Status Success"
+    else
+        echo "  Status Failure"
+    fi
+
+    echo
     exit $STATUS
 }
 
@@ -282,7 +290,7 @@ fi
 
 TESTS=$(($(grep -c Success $0) - 1))
 SCORE=$(python3 <<EOF
-print("{:0.2f}".format(($TESTS - $FAILURES) * 3.0 / $TESTS))
+print("{:0.2f} / 3.00".format(($TESTS - $FAILURES) * 3.0 / $TESTS))
 EOF
 )
 echo "   Score $SCORE"
