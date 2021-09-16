@@ -4,8 +4,8 @@
 
 This is the [CSE-30341-FA21] reading and project assignments repository for:
 
-- **Name**:     Domer McDomerson
-- **NetID**:    dmcdomer
+- **Name**:     Zachary Chua
+- **NetID**:    zchua
 
 [CSE-30341-FA21]:   https://www3.nd.edu/~pbui/teaching/cse.30341.fa21/
 
