@@ -7,18 +7,22 @@ ZXIgb3ZlcmZsb3cK
 EOF
 }
 
-printf "Testing reading08 program ... "
+echo "Checking reading08 program ... "
 
 DIFF=$(diff <(./program 2> /dev/null) <(output) | grep -E "^[><]" | wc -l)
+COUNT=$(output | wc -l)
 SCORE=$(python3 <<EOF
-print("{:0.2f}".format((6 - $DIFF) * 3.0 / 6.0))
+print("{:0.2f} / 3.00".format(($COUNT - $DIFF) * 3.0 / $COUNT.0))
 EOF
 )
-if [ "$DIFF" -eq 0 ]; then
-    echo "Success"
-else
-    echo "Failure"
-fi
 
 echo "   Score $SCORE"
+
+if [ "$DIFF" -eq 0 ]; then
+    echo "  Status Success"
+else
+    echo "  Status Failure"
+fi
+
+echo
 exit $DIFF
