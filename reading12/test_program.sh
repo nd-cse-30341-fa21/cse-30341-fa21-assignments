@@ -243,7 +243,7 @@ else
     echo "Success"
 fi
 
-ARGUMENTS="/var/log /root"
+ARGUMENTS=". .. /root"
 printf " %-60s ... " "program $ARGUMENTS"
 diff -u <(find $ARGUMENTS 2> /dev/null | xargs $SHA1SUM 2> /dev/null | sort) <(./program $ARGUMENTS | sort) &> $WORKSPACE/test
 if [ $? -ne 0 ]; then
